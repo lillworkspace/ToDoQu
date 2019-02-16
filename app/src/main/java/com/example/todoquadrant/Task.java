@@ -2,13 +2,19 @@ package com.example.todoquadrant;
 
 public class Task {
 
-    String message;
+    String tDescription;
+    int tPriority;
 
-    public Task(String message){
-        this.message = message;
+    public Task(String message, int priority){
+
+        tDescription = message;
+        tPriority = priority;
+
     }
 
-    public String getMessage(){
-        return message;
+    public String getDescription(){
+        return tDescription;
     }
+    public int getPriority() { return tPriority; }
+
 }

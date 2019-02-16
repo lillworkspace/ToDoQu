@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         tasks = new ArrayList<Task>();
         lvTasks = findViewById(R.id.lvTasks);
-        tasksAdapter = new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, tasks);
+
+        tasksAdapter = new TaskAdapter(this, tasks);
         lvTasks.setAdapter(tasksAdapter);
 
-        tasks.add(new Task("Sketch out GUI"));
-        tasks.add(new Task("Write code"));
-        tasks.add(new Task("Call Mom after dinner"));
+        tasks.add(new Task("Sketch out GUI", 1));
+        tasks.add(new Task("Write code", 1));
+        tasks.add(new Task("Call Mom after dinner", 1));
 
     }
 }

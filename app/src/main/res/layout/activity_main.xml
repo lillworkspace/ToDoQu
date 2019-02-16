@@ -26,20 +26,6 @@
         android:tint="@android:color/white"
         android:scaleType="center"/>
 
- <!--   <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="672dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="665dp"/> -->
 
 </android.support.constraint.ConstraintLayout>
