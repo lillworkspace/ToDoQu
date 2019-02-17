@@ -16,6 +16,7 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="addTaskDialog"
         android:scaleType="center"
         android:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
