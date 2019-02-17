@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ToDoQuadrant</string>
+
+    <string-array name="importance">
+        <item>Importance</item>
+        <item>Not Important</item>
+    </string-array>
+
+    <string-array name="urgency">
+        <item>Urgent</item>
+        <item>Not Urgent</item>
+    </string-array>
+
 </resources>
