@@ -2,19 +2,25 @@ package com.example.todoquadrant;
 
 public class Task {
 
-    String tDescription;
-    int tPriority;
+    String myDescription;
+    int myPriority;
+    private static int counter;
+    int IDnumber;
 
-    public Task(String message, int priority){
+    public Task(String description, int priority){
 
-        tDescription = message;
-        tPriority = priority;
+        myDescription = description;
+        myPriority = priority;
+        counter++;
+        IDnumber = counter;
 
     }
 
     public String getDescription(){
-        return tDescription;
+        return myDescription;
     }
-    public int getPriority() { return tPriority; }
+    public int getPriority() { return myPriority; }
+    public int getIDnumber() { return IDnumber; }
+
 
 }

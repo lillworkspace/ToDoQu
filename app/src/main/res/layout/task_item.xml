@@ -34,7 +34,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
+        android:onClick="deleteTask"
         android:src="@android:drawable/ic_delete"
-        android:tint="@android:color/secondary_text_dark"/>
+        android:tint="@android:color/secondary_text_dark" />
 
 </RelativeLayout>

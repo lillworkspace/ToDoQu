@@ -2,8 +2,10 @@ package com.example.todoquadrant;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -28,5 +30,22 @@ public class MainActivity extends AppCompatActivity {
         tasks.add(new Task("Write code", 1));
         tasks.add(new Task("Call Mom after dinner", 1));
 
+    }
+
+    public Task searchTask(String string) {
+        for (Task t : tasks){
+            if (t.getDescription().equals(string)){
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public void deleteTask(View view){
+        View parent = (View)view.getParent();
+        TextView taskView = findViewById(R.id.textView_id);
+        String description = String.valueOf(taskView.getText());
+        tasks.remove(searchTask(description));
+        tasksAdapter.notifyDataSetChanged();
     }
 }
