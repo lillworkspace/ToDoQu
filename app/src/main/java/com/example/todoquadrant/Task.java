@@ -2,7 +2,7 @@ package com.example.todoquadrant;
 
 import java.io.Serializable;
 
-public class Task implements Serializable{
+public class Task implements Serializable, Comparable<Task>{
 
     String myDescription;
     int myPriority;
@@ -23,4 +23,8 @@ public class Task implements Serializable{
     }
     public int getPriority() { return myPriority; }
 
+    @Override
+    public int compareTo(Task t) {
+        return this.myPriority - t.getPriority();
+    }
 }

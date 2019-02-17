@@ -19,10 +19,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FILE_NAME = "todo.txt";
+    private static final String FILE_NAME = "todo.txt"; // constant
     private ArrayList<Task> tasks;
     private ArrayAdapter<Task> tasksAdapter;
     private ListView lvTasks;
@@ -36,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         lvTasks = findViewById(R.id.lvTasks);
         readTasks();
 
-        tasksAdapter = new TaskAdapter(this, tasks);
+        tasksAdapter = new TaskAdapter(this, tasks); // custom adapter
         lvTasks.setAdapter(tasksAdapter);
 
-        Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras(); // passing data between activities
         if (extras != null){
             String description = extras.getString("description");
             int priority = extras.getInt("priority");
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         View parent = (View)view.getParent();
         TextView taskView = parent.findViewById(R.id.textView_id);
         String description = String.valueOf(taskView.getText());
-        tasks.remove(searchTask(description));
+        tasks.remove(searchTask(description)); // remove from array using a search function (below)
         tasksAdapter.notifyDataSetChanged();
         writeTasks();
     }
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     Task t = (Task) ois.readObject();
                     tasks.add(t);
                 }
-            } catch (EOFException e) { }
+            } catch (EOFException e) { } // Streams DO NOT return null after end, so just catch EOF.
         } catch (IOException e) {
             e.printStackTrace();
             tasks = new ArrayList<Task>();
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             FileOutputStream fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
+            Collections.sort(tasks);
             for (Task t: tasks){
                 oos.writeObject(t);
             }
