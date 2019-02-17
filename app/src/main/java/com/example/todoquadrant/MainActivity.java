@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void deleteTask(View view){
         View parent = (View)view.getParent();
-        TextView taskView = findViewById(R.id.textView_id);
+        TextView taskView = parent.findViewById(R.id.textView_id);
         String description = String.valueOf(taskView.getText());
         tasks.remove(searchTask(description));
-        tasksAdapter.notifyDataSetChanged();
+        tasksAdapter.notifyDataSetChanged(); 
     }
 }
