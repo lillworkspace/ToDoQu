@@ -26,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         tasksAdapter = new TaskAdapter(this, tasks);
         lvTasks.setAdapter(tasksAdapter);
 
-        tasks.add(new Task("Sketch out GUI", 1));
-        tasks.add(new Task("Write code", 1));
-        tasks.add(new Task("Call Mom after dinner", 1));
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            String description = extras.getString("description");
+            int priority = extras.getInt("priority");
+            tasks.add(new Task(description, priority));
+        }
     }
 
-    public void addTask(View view){
+    public void addActivity(View view){
         Intent intent = new Intent(this, com.example.todoquadrant.AddActivity.class);
         startActivity(intent);
     }

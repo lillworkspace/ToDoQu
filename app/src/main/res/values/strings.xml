@@ -2,7 +2,7 @@
     <string name="app_name">ToDoQuadrant</string>
 
     <string-array name="importance">
-        <item>Importance</item>
+        <item>Important</item>
         <item>Not Important</item>
     </string-array>
 
