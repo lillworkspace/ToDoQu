@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,4 +58,12 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
+
+    //private void readItems(){
+        //File dir = getFilesDir();
+        //File toDo = new File(dir, "toDo.txt");
+        //try{
+
+        //}
+    //}
 }

@@ -37,7 +37,11 @@ public class AddActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
 
         String description = text.getText().toString();
-        intent.putExtra("description", description);
+        if (!description.equals("")){
+            intent.putExtra("description", description);
+        } else {
+            intent.putExtra("description", "Unnamed Task");
+        }
 
         String importance = spinner1.getSelectedItem().toString();
         String urgency = spinner2.getSelectedItem().toString();
